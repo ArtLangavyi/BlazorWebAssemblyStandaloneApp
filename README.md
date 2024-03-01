@@ -9,8 +9,8 @@ Run `docker-compose up --build` from Hosted folder. Open browser and go to http:
 
 OR
 
-Run docker build -t blazorindockerdemo .
-Run docker run --name blazorindockerdemo -d -p 5002:8080 --rm blazorindockerdemo
+Run `docker build -t blazorindockerdemo .`
+Run `docker run --name blazorindockerdemo -d -p 5002:8080 --rm blazorindockerdemo`
 
 ### nginx config
 
@@ -38,21 +38,25 @@ Define SDK version
 <sub>FROM mcr.microsoft.com/dotnet/sdk:8.0 as build</sub>
 
 Define application folder
+
 <sub>WORKDIR /app</sub>
 
 Copy solution and project file (we need this for restore dependencies)
+
 <sub>
 COPY BlazorWebAssemblyStandaloneApp.sln ./
 COPY BlazorWebAssemblyStandaloneApp.csproj ./
 </sub>
 
 Basically restore dependencies
+
 <sub>
 RUN dotnet restore
 COPY . ./
 </sub>
 
 Let's publish in directory 'out'
+
 <sub>
 RUN dotnet publish -c Release -o out
 </sub>
