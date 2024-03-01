@@ -13,6 +13,8 @@ Run `docker build -t blazorindockerdemo .`
 
 Run `docker run --name blazorindockerdemo -d -p 5002:8080 --rm blazorindockerdemo`
 
+Open browser and go to http://localhost:5002/
+
 ### nginx config
 
 nginx config is pretty simple :) we need to define root path / filename / location
